@@ -31,6 +31,17 @@
   }
 }
 
+@keyframes smashPin {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes zoom {
   0% {
     opacity: 1;
@@ -45,8 +56,6 @@
 body {
   background-color: #333;
   font-family: 'Indie Flower', cursive;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,8 +69,6 @@ h1 {
 }
 
 .blackboard {
-  background-color: #000;
-  border: 20px solid #333;
   padding: 20px;
   max-width: 600px;
   text-align: center;
@@ -69,8 +76,7 @@ h1 {
   margin: auto;
 }
 
-.post-it,
-.post-it2 {
+.post-it {
   background-color: palegoldenrod;
   padding: 10px;
   width: 200px;
@@ -85,6 +91,19 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0px -51px 71px -37px black;
+}
+
+.post-it img {
+  width: 50px;
+}
+
+.pin {
+  position: absolute; /* Make the pin absolute */
+  top: -20px; /* Adjust the positioning to place it on top */
+  left: 100px; /* Adjust the positioning to place it on top */
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .post-it:nth-child(1) {
@@ -92,6 +111,11 @@ h1 {
   left: 10px;
   animation: smashIn2 0.5s ease forwards;
   animation-delay: 1s;
+}
+
+.one {
+  animation: smashPin 0.5s ease forwards;
+  animation-delay: 1.5s;
 }
 
 .post-it:nth-child(2) {
@@ -102,12 +126,22 @@ h1 {
   animation-delay: 2s;
 }
 
+.two {
+  animation: smashPin 0.5s ease forwards;
+  animation-delay: 2.5s;
+}
+
 .post-it:nth-child(3) {
   top: 10px;
   left: 470px;
   background-color: palevioletred;
   animation: smashIn2 0.5s ease forwards;
   animation-delay: 3s;
+}
+
+.three {
+  animation: smashPin 0.5s ease forwards;
+  animation-delay: 3.5s;
 }
 
 .post-it:nth-child(4) {
@@ -117,7 +151,12 @@ h1 {
   animation-delay: 4s;
 }
 
-.post-it2:nth-child(5) {
+.four {
+  animation: smashPin 0.5s ease forwards;
+  animation-delay: 4.5s;
+}
+
+.post-it:nth-child(5) {
   top: 200px;
   left: 10px;
   background-color: palegreen;
@@ -125,20 +164,37 @@ h1 {
   animation-delay: 5s;
 }
 
-.post-it2:nth-child(6) {
+.five {
+  animation: smashPin 0.5s ease forwards;
+  animation-delay: 5.5s;
+}
+
+.post-it:nth-child(6) {
   top: 200px;
   left: 240px;
   background-color: palevioletred;
   animation: smashIn 0.5s ease forwards;
   animation-delay: 6s;
 }
-.post-it2:nth-child(7) {
+
+.six {
+  animation: smashPin 0.5s ease forwards;
+  animation-delay: 6.5s;
+}
+
+.post-it:nth-child(7) {
   top: 200px;
   left: 470px;
   animation: smashIn2 0.5s ease forwards;
   animation-delay: 7s;
 }
-.post-it2:nth-child(8) {
+
+.seven {
+  animation: smashPin 0.5s ease forwards;
+  animation-delay: 7.5s;
+}
+
+.post-it:nth-child(8) {
   top: 200px;
   left: 700px;
   background-color: palegreen;
@@ -146,7 +202,15 @@ h1 {
   animation-delay: 8s;
 }
 
-.post-it:hover,
-.post-it2:hover {
+.eight {
+  animation: smashPin 0.5s ease forwards;
+  animation-delay: 8.5s;
+}
+
+.post-it:hover {
   animation: zoom 0.5s ease forwards;
+}
+
+.post-it:hover .pin {
+  visibility: hidden;
 }
